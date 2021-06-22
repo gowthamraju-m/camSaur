@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
+  <bpmn:process id="exampleProcess" name="Example Process" isExecutable="true" camunda:versionTag="1.0.0">
+    <bpmn:startEvent id="Event_0wakgsc">
+      <bpmn:outgoing>Flow_1draw3z</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1draw3z" sourceRef="Event_0wakgsc" targetRef="Event_1mq8pnm" />
+    <bpmn:intermediateCatchEvent id="Event_1mq8pnm">
+      <bpmn:incoming>Flow_1draw3z</bpmn:incoming>
+      <bpmn:outgoing>Flow_0pflgpo</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1wyupt1">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT10M</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:endEvent id="Event_01rw7f9">
+      <bpmn:incoming>Flow_0pflgpo</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0pflgpo" sourceRef="Event_1mq8pnm" targetRef="Event_01rw7f9" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="exampleProcess">
+      <bpmndi:BPMNEdge id="Flow_1draw3z_di" bpmnElement="Flow_1draw3z">
+        <di:waypoint x="188" y="100" />
+        <di:waypoint x="242" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0pflgpo_di" bpmnElement="Flow_0pflgpo">
+        <di:waypoint x="278" y="100" />
+        <di:waypoint x="332" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0wakgsc_di" bpmnElement="Event_0wakgsc">
+        <dc:Bounds x="152" y="82" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0jc5u23_di" bpmnElement="Event_1mq8pnm">
+        <dc:Bounds x="242" y="82" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_01rw7f9_di" bpmnElement="Event_01rw7f9">
+        <dc:Bounds x="332" y="82" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
